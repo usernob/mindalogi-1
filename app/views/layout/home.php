@@ -101,7 +101,7 @@
                 <div class="flex items-center justify-center gap-12 my-20">
                     <div>
                         <p class="header2 mb-8">Jangan ragu untuk bergabung dengan kami sekarang, dan mulai perjalanan Anda menuju sukses melalui pendidikan yang terjangkau dan berkualitas.</p>
-                        <a class="py-2 px-4 bg-primer1 rounded-md text-white body-text w-fit" href="<? +BASE_URL ?>/">Bergabung Sekarang</a>
+                        <a class="py-2 px-4 bg-primer1 rounded-md text-white body-text w-fit" href="<?= BASE_URL ?>/">Bergabung Sekarang</a>
                     </div>
                     <img src="<?= ASSETS ?>/img-fitur7.png">
                 </div>
@@ -171,7 +171,7 @@
                                         <h2 class="header2 text-black mb-4"><?= $value[$i][0] ?></h2>
                                         <p class="body-text text-black"><?= $value[$i][1] ?></p>
                                     </div>
-                                    <a class="py-2 px-4 bg-primer1 text-white body-text rounded-md ml-auto" href="<?= BASE_URL ?>/">Join Now</a>
+                                    <a class="py-2 px-4 bg-primer1 text-white body-text rounded-md ml-auto" href="<?= BASE_URL ?>/subs">Join Now</a>
                                 </div>
                             </div>
                         <?php endfor ?>
@@ -180,7 +180,7 @@
             </div>
             <div id="contact" class="mt-40">
                 <h2 class="text-center header2 text-primer1">Contact Us</h2>
-                <div class="flex text-black justify-between w-full py-20 gap-32">
+                <div class="flex text-black justify-between w-full py-20 gap-32 pb-36">
                     <div class="flex flex-col gap-4">
                         <h3 class="header2">Tetap terhubung dengan kami</h3>
                         <a href="<?= BASE_URL ?>" class="flex items-center gap-4">
@@ -216,7 +216,7 @@
             </div>
         </div>
     </section>
-    <footer class="w-full h-fit flex flex-col items-center bg-primer1 text-white">
+    <footer class="w-full h-fit flex flex-col items-center bg-primer3 text-white">
         <div class="container grid grid-cols-3 grid-rows-1 gap-8 auto-rows-max m-20">
             <div class="w-full h-fit">
                 <h2 class="header2">MINDALOGI</h2>
