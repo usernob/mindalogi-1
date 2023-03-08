@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header1 {
+    @apply font-main font-bold text-5xl
+}
+
+.header2 {
+    @apply font-main font-semibold text-3xl
+}
+
+.body-text {
+    @apply font-main font-medium text-base
+}
+
+.small-text {
+    @apply font-main font-normal text-sm
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 15px 0px 0px 15px;
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
