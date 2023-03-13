@@ -93,7 +93,7 @@
                             <h2 class="header2 text-primer1"><?= $features[$i]["title"] ?></h2>
                             <p class="body-text"><?= $features[$i]["desc"] ?></p>
                             <?php if ($i == 2) : ?>
-                                <a class="px-4 py-2 bg-primer1 text-white body-text w-fit rounded-md" href="<?= BASE_URL ?>/">Lihat Opsi Sertifikasi Resmi</a>
+                                <a class="px-4 py-2 bg-primer1 text-white body-text w-fit rounded-md" href="<?= BASE_URL ?>/sertifikat">Lihat Opsi Sertifikasi Resmi</a>
                             <?php endif ?>
                         </div>
                     </div>

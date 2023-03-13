@@ -25,18 +25,18 @@
                     </label>
                     <hr>
                     <label class="mt-[50px]">
-                        <input type="text" class="border-transparent w-full px-4 py-2 mt-9" placeholder="Handphone" />
+                        <input type="tel" class="border-transparent w-full px-4 py-2 mt-9" placeholder="Handphone" />
                     </label>
                     <hr>
                 </form>
                 </form>
             </div>
         </div>
-        <div class="t-mulai bg-primer1 text-white text-center rounded-lg mx-[190px] py-[7px] mt-[50px] body-text">
+        <div class="t-mulai bg-blue-700 text-white text-center rounded-lg mx-[190px] py-[7px] mt-[50px] body-text">
             <a href="#">Register</a>
         </div>
         <div class="back flex justify-center body-text mt-28">
-            <a href="<?= BASE_URL ?>" class="text-primer1 flex items-center"> <img src="<?= ASSETS ?>/Double left.png" width="30px"> Back Home</a>
+            <a href="<?= BASE_URL ?>" class="text-blue-700 flex items-center"> <img src="<?= ASSETS ?>/Double left.png" width="30px"> Back Home</a>
         </div>
     </div>
 
