@@ -3,9 +3,9 @@
 
 <?php require_once "app/views/template/head.php"; ?>
 
-<body style="background-image:url('<?= ASSETS ?> /Berlangganan.png')" class="bg-cover">
-    <div class="flex gap-[242px] ml-8">
-        <a href="<?= BASE_URL ?>"><img src="<?= ASSETS ?>/Double left.png" height="60px"></a>
+<body style="background-image:url('<?= ASSETS ?>/Berlangganan.png')" class="bg-cover">
+    <div class="flex gap-[242px] ml-8 items-center">
+        <a href="<?= BASE_URL ?>" class="h-14"><img src="<?= ASSETS ?>/Double Left.png" class="w-full h-full"></a>
         <div class="text-center h-full">
             <h1 class="text-primer2 body-text mt-[25px]">MULAI BERLANGGANAN</h1>
             <h1 class="text-blue-700 header2">Langganan Sekarang dan Jadi Lebih Hebat</h1>

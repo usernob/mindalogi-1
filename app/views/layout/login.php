@@ -13,26 +13,19 @@
                 <h1>Login</h1>
             </div>
             <div class="section">
-                <form>
-                    <div class="mb-[30px]">
-                        <label class="block">
-                            <input type="text" class="border-transparent w-full px-4 py-2" placeholder="Username" />
-                        </label>
-                        <hr>
-                    </div>
-                    <label class="mt-[50px]">
-                        <input type="password" class="border-transparent w-full px-4 py-2" placeholder="Password" />
+                <form class="flex flex-col items-center gap-8" action="<?= BASE_URL ?>/login/request" method="POST">
+                    <label class="w-full">
+                        <input type="text" class="border-slate-400 w-full px-4 py-2 border-b-2" placeholder="Username" name="username" />
                     </label>
-                    <hr>
-                </form>
+                    <label class="w-full">
+                        <input type="password" class="border-slate-400 w-full px-4 py-2 border-b-2" placeholder="Password" name="password"/>
+                    </label>
+                    <input class="py-2 px-8 bg-primer1 text-white rounded-md mt-4" type="submit" value="Login" />
                 </form>
             </div>
         </div>
-        <div class="t-mulai bg-blue-700 text-white text-center rounded-lg mx-[190px] py-[7px] mt-[50px] body-text">
-            <a href="#login">Login</a>
-        </div>
         <div class="text-center mt-[7px] body-text">
-            <p>Forgot Password?<span><a href="Register"> Register</a></span></p>
+        <a href="<?= ASSETS ?>/register">Forgot Password? Register</a>
         </div>
         <div class="justify-center flex gap-[20px] mt-[50px] mb-[100px]">
             <img src="<?= ASSETS ?>/fb.jpeg">
@@ -40,7 +33,7 @@
             <img src="<?= ASSETS ?>/google.jpeg">
         </div>
         <div class="back flex justify-center body-text">
-            <a href="<?= BASE_URL ?>" class="text-blue-700 flex items-center"> <img src="<?= ASSETS ?>/Double left.png" width="30px"> Back Home</a>
+            <a href="<?= BASE_URL ?>" class="text-blue-700 flex items-center"> <img src="<?= ASSETS ?>/Double Left.png" width="30px"> Back Home</a>
         </div>
     </div>
 </body>

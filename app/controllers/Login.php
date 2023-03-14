@@ -6,4 +6,8 @@ class Login extends Controller
     {
         $this->view("layout/login");
     }
+    public function request()
+    {
+        $this->model("Login_model")->get_login($_POST);
+    }
 }

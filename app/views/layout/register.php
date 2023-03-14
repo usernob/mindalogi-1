@@ -13,31 +13,22 @@
                 <h1>Registrasi</h1>
             </div>
             <div class="section">
-                <form>
-                    <div class="mb-[30px]">
-                        <label class="block">
-                            <input type="text" class="border-transparent w-full px-4 py-2" placeholder="Username" />
-                        </label>
-                        <hr>
-                    </div>
-                    <label class="mt-[50px]">
-                        <input type="password" class="border-transparent w-full px-4 py-2" placeholder="Password" />
+                <form class="flex flex-col items-center gap-10" action="<?= BASE_URL ?>/register/request" method="POST">
+                    <label class="w-full">
+                        <input type="text" class="border-slate-400 w-full px-4 py-2 border-b-2" placeholder="Username" name="username" />
                     </label>
-                    <hr>
-                    <label class="mt-[50px]">
-                        <input type="tel" class="border-transparent w-full px-4 py-2 mt-9" placeholder="Handphone" />
+                    <label class="w-full">
+                        <input type="password" class="border-slate-400 w-full px-4 py-2 border-b-2" placeholder="Password" name="password"/>
                     </label>
-                    <hr>
-                </form>
+                    <label class="w-full">
+                        <input type="tel" class="border-slate-400 w-full px-4 py-2 border-b-2" placeholder="Handphone"name="handphone"/>
+                    </label>
+                    <input class="py-2 px-8 bg-primer1 text-white rounded-md mt-4" type="submit" value="Register" />
                 </form>
             </div>
         </div>
-        <div class="t-mulai bg-blue-700 text-white text-center rounded-lg mx-[190px] py-[7px] mt-[50px] body-text">
-            <a href="#">Register</a>
-        </div>
         <div class="back flex justify-center body-text mt-28">
-            <a href="<?= BASE_URL ?>" class="text-blue-700 flex items-center"> <img src="<?= ASSETS ?>/Double left.png" width="30px"> Back Home</a>
+            <a href="<?= BASE_URL ?>" class="text-blue-700 flex items-center"> <img src="<?= ASSETS ?>/Double Left.png" width="30px"> Back Home</a>
         </div>
     </div>
-
 </html>
