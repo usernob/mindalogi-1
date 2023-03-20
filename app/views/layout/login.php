@@ -18,14 +18,17 @@
                         <input type="text" class="border-slate-400 w-full px-4 py-2 border-b-2" placeholder="Username" name="username" />
                     </label>
                     <label class="w-full">
-                        <input type="password" class="border-slate-400 w-full px-4 py-2 border-b-2" placeholder="Password" name="password"/>
+                        <input type="password" class="border-slate-400 w-full px-4 py-2 border-b-2" placeholder="Password" name="password" />
                     </label>
                     <input class="py-2 px-8 bg-primer1 text-white rounded-md mt-4" type="submit" value="Login" />
                 </form>
             </div>
         </div>
         <div class="text-center mt-[7px] body-text">
-        <a href="<?= ASSETS ?>/register">Forgot Password? Register</a>
+            <a href="<?= BASE_URL ?>/register">Forgot Password? Register</a>
+            <?php if (isset($_SESSION["login_failed"])) : unset($_SESSION["login_failed"]) ?>
+                <p class="text-primer2">Login Failed Username or Password Incorrect</p>
+            <?php endif ?>
         </div>
         <div class="justify-center flex gap-[20px] mt-[50px] mb-[100px]">
             <img src="<?= ASSETS ?>/fb.jpeg">

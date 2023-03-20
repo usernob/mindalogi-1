@@ -1,5 +1,5 @@
 <head>
-    <title><?= isset($data["title"]) ? $data["title"] : "Muka Hitam" ?></title>
+    <title><?= isset($data["title"]) ? $data["title"] : WEB_NAME ?></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="<?= BASE_URL; ?>/public/css/style.min.css" rel="stylesheet">

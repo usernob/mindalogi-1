@@ -22,6 +22,7 @@ module.exports = {
 				primer2: "#FF1D61",
 				primer3: "#1CADFF",
 				primer4: "#1FA3A3",
+				primer5: "#E0DEDE",
 				dark: "#000000",
 				white: "#FFFFFF"
 			},

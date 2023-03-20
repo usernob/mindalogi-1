@@ -18,10 +18,10 @@
                         <input type="text" class="border-slate-400 w-full px-4 py-2 border-b-2" placeholder="Username" name="username" />
                     </label>
                     <label class="w-full">
-                        <input type="password" class="border-slate-400 w-full px-4 py-2 border-b-2" placeholder="Password" name="password"/>
+                        <input type="password" class="border-slate-400 w-full px-4 py-2 border-b-2" placeholder="Password" name="password" />
                     </label>
                     <label class="w-full">
-                        <input type="tel" class="border-slate-400 w-full px-4 py-2 border-b-2" placeholder="Handphone"name="handphone"/>
+                        <input type="tel" class="border-slate-400 w-full px-4 py-2 border-b-2" placeholder="Handphone" name="no_hp" />
                     </label>
                     <input class="py-2 px-8 bg-primer1 text-white rounded-md mt-4" type="submit" value="Register" />
                 </form>
@@ -29,6 +29,10 @@
         </div>
         <div class="back flex justify-center body-text mt-28">
             <a href="<?= BASE_URL ?>" class="text-blue-700 flex items-center"> <img src="<?= ASSETS ?>/Double Left.png" width="30px"> Back Home</a>
+            <?php if (isset($_SESSION["username_exist"])) : unset($_SESSION["username_exist"]) ?>
+                <p class="text-primer2">Username Already Exists</p>
+            <?php endif ?>
         </div>
     </div>
+
 </html>
