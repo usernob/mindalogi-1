@@ -48,6 +48,7 @@
             </div>
         </div>
     </main>
+    <?php require_once "app/views/template/modal.php"; ?>
 </body>
 
 </html>
