@@ -1,0 +1,71 @@
+version: '3'
+services:
+    webserver:
+        build:
+            context: .
+        container_name: lamp-php
+        restart: always
+        ports:
+            - 80:80
+            - 443:443
+        depends_on:
+            - database
+        volumes:
+            - ./:var/www/html
+            - /usr/local/etc/php/php.ini
+            - /var/log/apache2
+            # - ./logs/xdebug:/var/log/xdebug
+        environment:
+            APACHE_DOCUMENT_ROOT: /var/www/html
+            PMA_PORT: 8080
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
+            # XDEBUG_CONFIG: "client_host=host.docker.internal remote_port=9003"
+        # extra_hosts:
+        # - "host.docker.internal:host-gateway"
+    database:
+        build:
+            context: .
+            dockerfile: Dockerfike-sql
+        container_name: lamp-mysql
+        restart: always
+        ports:
+            - 3306:3306
+        volumes:
+            - /docker-entrypoint-initdb.d
+            - /var/lib/mysql
+            - /var/log/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: mindalogi
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
+    phpmyadmin:
+        image: phpmyadmin
+        container_name: lamp-phpmyadmin
+        links:
+            - database
+        environment:
+            PMA_HOST: database
+            PMA_PORT: 3306
+            PMA_USER: root
+            PMA_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
+            UPLOAD_LIMIT: 512M
+            MEMORI_LIMIT: 512M
+        ports:
+            - 8080:80
+            - 8443:443
+        volumes:
+            - /sessions
+            - /usr/local/etc/php/conf.d/php-phpmyadmin.ini
+endpoints:
+    - path: /
+      service: webserver
+      port: 80
+    - path: /phpmyadmin
+      service: phpmyadmin
+      port: 80
