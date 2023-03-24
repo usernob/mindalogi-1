@@ -11,7 +11,7 @@ services:
         depends_on:
             - database
         volumes:
-            - ./:var/www/html
+            - ./:/var/www/html
             - /usr/local/etc/php/php.ini
             - /var/log/apache2
             # - ./logs/xdebug:/var/log/xdebug
@@ -27,7 +27,7 @@ services:
     database:
         build:
             context: .
-            dockerfile: Dockerfike-sql
+            dockerfile: Dockerfile-sql
         container_name: lamp-mysql
         restart: always
         ports:
