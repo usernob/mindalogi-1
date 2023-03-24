@@ -11,9 +11,8 @@ services:
         depends_on:
             - database
         volumes:
-            - ./:/var/www/html
-            - /usr/local/etc/php/php.ini
-            - /var/log/apache2
+            - .:/var/www/html
+            - apache2:/var/log/apache2
             # - ./logs/xdebug:/var/log/xdebug
         environment:
             APACHE_DOCUMENT_ROOT: /var/www/html
@@ -44,7 +43,7 @@ services:
     phpmyadmin:
         image: phpmyadmin
         container_name: lamp-phpmyadmin
-        links:
+        depends_on:
             - database
         environment:
             PMA_ARBITRARY: 1
@@ -58,9 +57,6 @@ services:
         ports:
             - 8080:80
             - 8443:443
-        volumes:
-            - /sessions
-            - /usr/local/etc/php/conf.d/php-phpmyadmin.ini
 endpoints:
     - path: /
       service: webserver
@@ -68,3 +64,7 @@ endpoints:
     - path: /phpmyadmin
       service: phpmyadmin
       port: 80
+volumes:
+    labels: apache2
+    driver_opts:
+        size: 20Mi

@@ -64,4 +64,6 @@ RUN a2enmod rewrite headers
 
 WORKDIR .
 
-COPY . /var/www/html
+ADD ./config.example.php ./config.php
+#
+# COPY . /var/www/html
