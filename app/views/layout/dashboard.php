@@ -43,7 +43,7 @@
                     <img src="<?= $avatar; ?>" class="rounded-full w-9 h-9 object-cover object-center bg-white shadow-md">
                 </div>
             </div>
-            <div class="flex-grow w-full p-4 pr-16">
+            <div class="flex-grow w-full p-4 pr-16 overflow-y-auto">
                 <?php require_once "app/views/dashboard/" . $route . ".php"; ?>
             </div>
         </div>

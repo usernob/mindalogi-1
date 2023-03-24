@@ -11,6 +11,36 @@ class Dashboard extends Controller
     public function index()
     {
         $this->getUser($data);
+        $scheme = [
+            "tutorial" => [
+                "count" => 0,
+                "col" => "#00A1F1",
+                "icon" => "/tutorials.png"
+            ],
+            "completed" => [
+                "count" => 0,
+                "col" => "#FF1D61",
+                "icon" => "/task.png"
+            ],
+            "quizzes" => [
+                "count" => 0,
+                "col" => "#00F17D",
+                "icon" => "/quiz.png"
+            ],
+            "lessons" => [
+                "count" => 0,
+                "col" => "#F17400",
+                "icon" => "/lesson.png"
+            ]
+        ];
+        $tutorials = $this->model("Dashboard_model")->getProgress($_SESSION["_id"]);
+        foreach ($tutorials as $tutorial) {
+            $scheme["tutorial"]["count"] += $tutorial["count"];
+            if ($tutorial["complete"] == 1) {
+                $scheme["completed"]["count"] = $tutorial["count"];
+            }
+        }
+        $data["db"]["progress"] = $scheme;
         $data["title"] = WEB_NAME . " - dashboard";
         $this->view("layout/dashboard", $data);
     }
@@ -20,8 +50,11 @@ class Dashboard extends Controller
         $data["title"] = WEB_NAME . " - profile";
         $this->view("layout/dashboard", $data, __FUNCTION__);
     }
-    public function tutorials()
+    public function tutorials($params = "/")
     {
+        if ($params != "/") {
+            echo $params;
+        }
         $this->getUser($data);
         $data["title"] = WEB_NAME . " - tutorials";
         $this->view("layout/dashboard", $data, __FUNCTION__);
