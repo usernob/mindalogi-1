@@ -11,6 +11,8 @@ jobs:
     - name: Set outputs
       id: vars
       run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+    - name: Check outputs
+      run: echo ${{ steps.vars.outputs.sha_short }}
     - name: Context
       uses: okteto/context@latest
       with:
@@ -21,5 +23,5 @@ jobs:
       env:
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: ${{ steps.vars.output.sha_short }}-usernob
+        name: ${{ steps.vars.outputs.sha_short }}-usernob
         timeout: 15m
