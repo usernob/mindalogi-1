@@ -1,3 +1,3 @@
 # MINDALOGI
 
-cuma sebuah tugas
+cuma sebuah tugas sekalian balajar CI/CD
