@@ -50,7 +50,7 @@ services:
             PMA_ARBITRARY: 1
             PMA_HOST: database
             PMA_PORT: 3306
-            PMA_USER: phpmyadmin
+            PMA_USER: usernob
             PMA_PASSWORD: usernob
             MYSQL_ROOT_PASSWORD: usernob
             MYSQL_USER: usernob
@@ -68,4 +68,4 @@ endpoints:
 volumes:
     apache2:
       driver_opts:
-          size: 20Mi
+          size: 20MiB
