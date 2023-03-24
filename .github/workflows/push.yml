@@ -3,12 +3,12 @@ on:
     brances:
       - main
 
-job:
+jobs:
   push:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: push
+        uses: actions/checkout@v2
         env:
           TARGET_BRANCH: "docker-compose"
         run: |
