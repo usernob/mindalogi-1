@@ -46,8 +46,8 @@ dev:
       - 443:443
     environment:
       - APACHE_DOCUMENT_ROOT=/var/www/html
-      - MYSQL_PASSWORD=root
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_USER=root
+      - MYSQL_PASSWORD=usernob
+      - MYSQL_ROOT_PASSWORD=usernob
+      - MYSQL_USER=usernob
       - PMA_PORT=8080
 

@@ -18,9 +18,9 @@ services:
         environment:
             APACHE_DOCUMENT_ROOT: /var/www/html
             PMA_PORT: 8080
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_USER: root
-            MYSQL_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: usernob
+            MYSQL_USER: usernob
+            MYSQL_PASSWORD: usernob
             # XDEBUG_CONFIG: "client_host=host.docker.internal remote_port=9003"
         # extra_hosts:
         # - "host.docker.internal:host-gateway"
@@ -37,25 +37,24 @@ services:
             - /var/lib/mysql
             - /var/log/mysql
         environment:
-            MYSQL_ROOT_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: usernob
             MYSQL_DATABASE: mindalogi
-            MYSQL_USER: root
-            MYSQL_PASSWORD: root
+            MYSQL_USER: usernob
+            MYSQL_PASSWORD: usernob
     phpmyadmin:
         image: phpmyadmin
         container_name: lamp-phpmyadmin
         links:
             - database
         environment:
+            PMA_ARBITRARY: 1
             PMA_HOST: database
             PMA_PORT: 3306
-            PMA_USER: root
-            PMA_PASSWORD: root
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_USER: root
-            MYSQL_PASSWORD: root
-            UPLOAD_LIMIT: 512M
-            MEMORI_LIMIT: 512M
+            PMA_USER: phpmyadmin
+            PMA_PASSWORD: usernob
+            MYSQL_ROOT_PASSWORD: usernob
+            MYSQL_USER: usernob
+            MYSQL_PASSWORD: usernob
         ports:
             - 8080:80
             - 8443:443
