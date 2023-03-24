@@ -6,12 +6,12 @@ on:
 jobs:
   push:
     runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v2
-    - name: merge
-      uses: mtanzi/action-automerge@v1
-      id: merge
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        source: 'main'
-        target: 'docker-compose'
+    steps:
+      - uses: actions/checkout@v2
+      - name: merge
+        uses: mtanzi/action-automerge@v1
+        id: merge
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source: 'main'
+          target: 'docker-compose'
