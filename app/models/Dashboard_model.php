@@ -29,4 +29,12 @@ class Dashboard_model extends Model
         $this->db->execute();
         return $this->db->rowCount();
     }
+    public function getProgress($id)
+    {
+        $this->db->query(
+            "SELECT complete, COUNT(complete) as count FROM progress WHERE id_user = :id GROUP BY complete"
+        );
+        $this->db->bind("id", $id);
+        return $this->db->resultSet();
+    }
 }
