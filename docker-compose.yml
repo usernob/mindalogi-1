@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
     webserver:
         build:
@@ -33,6 +33,7 @@ services:
             - 3306:3306
         volumes:
             - /docker-entrypoint-initdb.d
+            - ./mindalogi.sql:/docker-entrypoint-initdb.d/mindalogi.sql
             - /var/lib/mysql
             # - /var/log/mysql
         environment:
@@ -66,5 +67,5 @@ endpoints:
       port: 80
 volumes:
     apache2:
-      driver_opts:
-          size: 20Mi
+        driver_opts:
+            size: 20Mi
