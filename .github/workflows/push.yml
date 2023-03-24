@@ -6,15 +6,13 @@ on:
 jobs:
   push:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: push
-        env:
-          TARGET_BRANCH: "docker-compose"
-        run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
-          git fetch
-          git checkout $TARGET_BRANCH
-          git fetch origin
-          git merge origin/main
+  steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: merge
+      uses: mtanzi/action-automerge@v1
+      id: merge
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        source: 'main'
+        target: 'docker-compose'
