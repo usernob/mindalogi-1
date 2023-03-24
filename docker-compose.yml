@@ -65,6 +65,6 @@ endpoints:
       service: phpmyadmin
       port: 80
 volumes:
-    labels: apache2
-    driver_opts:
-        size: 20Mi
+    apache2:
+      driver_opts:
+          size: 20Mi
