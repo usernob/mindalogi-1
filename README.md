@@ -1,0 +1,3 @@
+# MINDALOGI
+
+cuma sebuah tugas
