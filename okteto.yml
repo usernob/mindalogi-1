@@ -11,7 +11,7 @@ build:
   #  - OKTETO_BUILD_DATABASE_TAG: image tag
   database:
     context: .
-    dockerfile: Dockerfike-sql
+    dockerfile: Dockerfile-sql
 
   # You can use the following env vars to refer to this image in your deploy commands:
   #  - OKTETO_BUILD_WEBSERVER_REGISTRY: image registry
