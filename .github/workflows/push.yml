@@ -6,12 +6,17 @@ on:
 jobs:
   push:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v2
-      - name: merge
-        uses: mtanzi/action-automerge@v1
-        id: merge
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          source: 'main'
-          target: 'docker-compose'
+    - uses: actions/checkout@v2
+    - name: Set Git config
+      run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Github Actions"
+    - name: Merge master back to dev
+      run: |
+          git fetch --unshallow
+          git checkout docker-compose
+          git pull
+          git merge --no-ff master -m "Auto-merge from main"
+          git push
