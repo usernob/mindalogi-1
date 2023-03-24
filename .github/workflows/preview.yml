@@ -1,0 +1,25 @@
+# file: .github/workflows/preview.yaml
+on:
+  push:
+    branches:
+      - docker-compose
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set outputs
+      id: vars
+      run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+    - name: Context
+      uses: okteto/context@latest
+      with:
+        url: ${{secrets.OKTETO_URL}}
+        token: ${{ secrets.OKTETO_TOKEN }}
+    - name: Deploy preview environment
+      uses: okteto/deploy-preview@latest
+      env:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        name: ${{ steps.vars.output.sha_short }}-usernob
+        timeout: 15m
