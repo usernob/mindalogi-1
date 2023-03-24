@@ -68,4 +68,4 @@ endpoints:
 volumes:
     apache2:
       driver_opts:
-          size: 20MiB
+          size: 20Mi
