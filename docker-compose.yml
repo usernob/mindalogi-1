@@ -56,15 +56,14 @@ services:
             MYSQL_USER: usernob
             MYSQL_PASSWORD: usernob
         ports:
-            - 80:80
-            - 443:443
+            - 8080:80
 endpoints:
     - path: /
       service: webserver
       port: 80
     - path: /phpmyadmin
       service: phpmyadmin
-      port: 80
+      port: 8080
 volumes:
     apache2:
       driver_opts:
