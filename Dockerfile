@@ -61,3 +61,7 @@ RUN a2enmod rewrite
 
 # Enable apache modules
 RUN a2enmod rewrite headers
+
+WORKDIR .
+
+COPY . /var/www/html
