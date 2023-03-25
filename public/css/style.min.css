@@ -606,11 +606,6 @@ video {
   margin-bottom: 5rem;
 }
 
-.my-10{
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 .my-4{
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -700,12 +695,20 @@ video {
   display: grid;
 }
 
+.h-10{
+  height: 2.5rem;
+}
+
 .h-14{
   height: 3.5rem;
 }
 
 .h-20{
   height: 5rem;
+}
+
+.h-40{
+  height: 10rem;
 }
 
 .h-6{
@@ -749,24 +752,20 @@ video {
   height: 100vh;
 }
 
-.h-40{
-  height: 10rem;
+.h-2{
+  height: 0.5rem;
 }
 
-.h-52{
-  height: 13rem;
-}
-
-.h-32{
-  height: 8rem;
-}
-
-.h-36{
-  height: 9rem;
+.h-5{
+  height: 1.25rem;
 }
 
 .min-h-\[8rem\]{
   min-height: 8rem;
+}
+
+.w-10{
+  width: 2.5rem;
 }
 
 .w-20{
@@ -779,6 +778,10 @@ video {
 
 .w-6{
   width: 1.5rem;
+}
+
+.w-72{
+  width: 18rem;
 }
 
 .w-8{
@@ -810,12 +813,12 @@ video {
   width: 100vw;
 }
 
-.w-52{
-  width: 13rem;
+.w-2{
+  width: 0.5rem;
 }
 
-.w-72{
-  width: 18rem;
+.w-5{
+  width: 1.25rem;
 }
 
 .min-w-\[20rem\]{
@@ -938,6 +941,10 @@ video {
   gap: 242px;
 }
 
+.gap-1{
+  gap: 0.25rem;
+}
+
 .overflow-hidden{
   overflow: hidden;
 }
@@ -948,10 +955,6 @@ video {
 
 .overflow-y-auto{
   overflow-y: auto;
-}
-
-.overflow-x-scroll{
-  overflow-x: scroll;
 }
 
 .scroll-smooth{
@@ -1294,19 +1297,14 @@ video {
   color: rgb(255 29 97 / var(--tw-text-opacity));
 }
 
-.text-white{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-primer3{
-  --tw-text-opacity: 1;
-  color: rgb(28 173 255 / var(--tw-text-opacity));
-}
-
 .text-primer4{
   --tw-text-opacity: 1;
   color: rgb(31 163 163 / var(--tw-text-opacity));
+}
+
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .text-opacity-40{

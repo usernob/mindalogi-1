@@ -6,7 +6,7 @@ class Dashboard extends Controller
         if (!isset($_SESSION["_id"])) {
             return header("location:" . BASE_URL . "/login");
         }
-        $data["db"]["user"] = $this->model("Dashboard_model")->getUserInfo($_SESSION["_id"], "avatar, username");
+        $data["db"]["user"] = $this->model("Dashboard_model")->getUserInfo($_SESSION["_id"], "avatar, username, tier");
     }
     public function index()
     {
@@ -52,10 +52,14 @@ class Dashboard extends Controller
     }
     public function tutorials($params = "/")
     {
+        $model = $this->model("Dashboard_model");
         if ($params != "/") {
-            echo $params;
+            if ($params == "/all") {
+                $data["db"]["tutorial"] = $model->getAllTutorial();
+            }
         }
         $this->getUser($data);
+        $data["db"]["tutorial"] = $model->getFreeTutorial();
         $data["title"] = WEB_NAME . " - tutorials";
         $this->view("layout/dashboard", $data, __FUNCTION__);
     }
