@@ -38,10 +38,15 @@
             $avatar = 'data:image/' . $type . ';base64,' . base64_encode($image);
             ?>
             <div class="w-full py-4 px-16 bg-white flex justify-end">
-                <div class="flex items-center gap-4">
-                    <a class="body-text" href="<?= BASE_URL . "/dashboard/profile" ?>"><?= $data["db"]["user"]["username"] ?></a>
+                <a class="flex items-center gap-4" href="<?= BASE_URL . "/dashboard/profile" ?>">
+                    <div class="flex items-center gap-1">
+                        <p class="body-text"><?= $data["db"]["user"]["username"] ?></p>
+                        <?php if ($data["db"]["user"]["tier"] == "premium") : ?>
+                            <img class="w-5 h-5" src="<?= ASSETS ?>/icons8-fairytale.png">
+                        <?php endif ?>
+                    </div>
                     <img src="<?= $avatar; ?>" class="rounded-full w-9 h-9 object-cover object-center bg-white shadow-md">
-                </div>
+                </a>
             </div>
             <div class="flex-grow w-full p-4 pr-16 overflow-y-auto">
                 <?php require_once "app/views/dashboard/" . $route . ".php"; ?>
