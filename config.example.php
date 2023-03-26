@@ -1,6 +1,6 @@
 <?php
 // define("BASE_URL", "https://greenie.loca.lt/greenie");
-$protocol = isset($_SERVER['HTTPS']) ? "https" : "http";
+$protocol = "https";
 define("BASE_URL", $protocol . "://" . $_SERVER["SERVER_NAME"]);
 define("ASSETS", $protocol . "://" . $_SERVER["SERVER_NAME"] . "/public/assets");
 define("DB_HOST", "127.0.0.1");
