@@ -37,7 +37,7 @@
                 <p class="mb-6">Diskon untuk Bootcamp</p>
             </div>
             <div class="t-mulai bg-blue-600 text-white text-center rounded-xl px-[78px] py-[9px]">
-                <a href="#mulai" class="body-text">Mulai Berlangganan</a>
+                <a href="<?= BASE_URL ?>/subs/premium" class="body-text">Mulai Berlangganan</a>
             </div>
         </div>
         <div class="rounded-3xl">
@@ -64,7 +64,7 @@
                     <p class="mb-24">Diskon untuk Bootcamp</p>
                 </div>
                 <div class="t-mulai bg-blue-600 text-white text-center rounded-xl px-[78px] py-[9px]">
-                    <a href="#mulai" class="body-text">Mulai Berlangganan</a>
+                    <a href="<?= BASE_URL ?>/subs/premium" class="body-text">Mulai Berlangganan</a>
                 </div>
             </div>
         </div>
@@ -88,7 +88,7 @@
                 <p class="mb-20">Grup Komunitas</p>
             </div>
             <div class="t-mulai bg-blue-600 text-white text-center rounded-xl px-[78px] py-[9px]">
-                <a href="#mulai" class="body-text">Mulai Berlangganan</a>
+                <a href="<?= BASE_URL ?>/subs/premium" class="body-text">Mulai Berlangganan</a>
             </div>
         </div>
     </div>
