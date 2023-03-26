@@ -50,16 +50,13 @@ class Dashboard extends Controller
         $data["title"] = WEB_NAME . " - profile";
         $this->view("layout/dashboard", $data, __FUNCTION__);
     }
-    public function tutorials($params = "/")
+    public function tutorials()
     {
         $model = $this->model("Dashboard_model");
-        if ($params != "/") {
-            if ($params == "/all") {
-                $data["db"]["tutorial"] = $model->getAllTutorial();
-            }
-        }
         $this->getUser($data);
-        $data["db"]["tutorial"] = $model->getFreeTutorial();
+
+        $data["db"]["tutorial"]["free"] = $model->getTutorial("free");
+        $data["db"]["tutorial"]["paid"] = $model->getTutorial("paid");
         $data["title"] = WEB_NAME . " - tutorials";
         $this->view("layout/dashboard", $data, __FUNCTION__);
     }
