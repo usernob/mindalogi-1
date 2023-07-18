@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `progress` (
   `id_user` int(11) NOT NULL,
   `id_tutorial` int(11) NOT NULL,
-  `complete` tinyint(1) NOT NULL,
+  `complete` tinyint(1) NOT NULL DEFAULT '0',
   `attemp_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

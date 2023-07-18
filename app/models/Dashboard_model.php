@@ -37,12 +37,12 @@ class Dashboard_model extends Model
         $this->db->bind("id", $id);
         return $this->db->resultSet();
     }
-    public function getFreeTutorial()
+    public function getTutorial($tier)
     {
         $this->db->query(
             "SELECT * FROM tutorial WHERE prices=:prices"
         );
-        $this->db->bind("prices", "free");
+        $this->db->bind("prices", $tier);
         return $this->db->resultSet();
     }
 }
