@@ -8,7 +8,7 @@ FROM php:7.2-apache-stretch
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get -y update --fix-missing --no-install-recommends
+RUN apt-get -y update
 RUN apt-get -y upgrade
 
 # Install useful tools
